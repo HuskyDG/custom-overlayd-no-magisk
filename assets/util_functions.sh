@@ -423,10 +423,6 @@ install_magisk() {
   SOURCEDMODE=true
   . ./boot_patch.sh "$BOOTIMAGE"
 
-  ui_print "- Backup current boot image to /cache/old_boot.img"
-  rm -rf /cache/old_boot.img
-  dd if="$BOOTIMAGE" of=/cache/old_boot.img
-
   ui_print "- Flashing new boot image"
   flash_image new-boot.img "$BOOTIMAGE"
   case $? in
